@@ -23,8 +23,21 @@ nonUniqueElements([1, 2, 3, 4, 5]) == []
 nonUniqueElements([5, 5, 5, 5, 5]) == [5, 5, 5, 5, 5]
 nonUniqueElements([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
  */
+function count(data , letter){
+  var i
+  var count = 0
+  for (i = 0; i < data.length; i++)
+    if (data[i] == letter)
+      count++
+  return count
+}
+
 
 export default function nonUniqueElements(data) {
-  // your solution goes here
+  var i
+  for (i = 0; i < data.length;i ++)
+    if (count(data, data[i]) <=1)
+      delete data[i]
+  data = data.filter( element => element != undefined )
   return data
 }
