@@ -9,7 +9,7 @@
 
 import convertBytesToHuman from './convertBytesToHuman';
 
-test('Возвращает false для неправильного типа данных', () => {
+test('Возвращает false для неправильного типа данных',  () => {
   expect(convertBytesToHuman(/* ... */)).toBe(/* ... */)
   // ...
 });
