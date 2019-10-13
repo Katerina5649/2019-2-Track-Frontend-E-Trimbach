@@ -5,6 +5,7 @@ template.innerHTML = `
             border: 0;
             outline: none;
             width: calc(100% - 2px);
+            
            
         }
 
@@ -35,6 +36,11 @@ class FormInput extends HTMLElement {
 
     get value() {
         return this.$input.value;
+    }
+
+    /*Очищает input */
+    clearInput(){
+      this.$input.value = ""
     }
 }
 
