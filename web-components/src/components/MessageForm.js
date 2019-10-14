@@ -4,16 +4,40 @@ const template = document.createElement('template');
 // language=HTML
 template.innerHTML = `
     <style>
+        ol{
+            background: beige;
+        }
+        
+        li {
+            /*
+            width: 100%;
+             display: flex;
+            justify-content: flex-end;
+            */
+            background: bisque;
+            list-style-type: none; /* Убираем маркеры списка*/
+            border: 6px solid white;
+            border: 1px solid grey;
+            margin:10px;
+            border-radius: 0.9em;
+            padding: 5px;
+            
+           }
+    
+       
+        
         #messList{
-            list-style-type: decimal;
             overflow-y: scroll;
             height: 700px;
             bottom: 0;
-            text-align: right;
+           
             text-align: right;
             border-collapse: separate;
             margin-bottom: 10px;
+            
+            
         }
+        
         
         form-input {
             height: 6vh;
@@ -32,9 +56,6 @@ template.innerHTML = `
     <form>
         <form-input name="message-text" placeholder="Введите сообщение"></form-input>
     </form>
-    <script>
-        doSomething()
-    </script>
    
 `;
 
@@ -50,18 +71,16 @@ class MessageForm extends HTMLElement {
       //поиск по id
       this.$messList = this._shadowRoot.querySelector("#messList");
 
-        //получаю Лист сообщений с localStorage
+      //получаю Лист сообщений с localStorage
       this.messageList = MessageForm.getElementFromLocalStorage("messList");
       if (this.messageList == null)
-        //todo
         this.messageList  = []
       //отображение списка messageList
 
         for (i = 0; i < this.messageList.length; i++) {
-          const message = document.createElement("div")
-          message.innerHTML =this.messageList[i]
-          message.className = "mess"
-         // message.style.top = "100 px";
+          const message = document.createElement("li")
+          message.innerHTML = this.messageList[i]
+          message.style.top = "100 px";
           this.$messList.append(message)
         }
 
@@ -78,18 +97,22 @@ class MessageForm extends HTMLElement {
     _onSubmit (event) {
         //todo что это?
         event.preventDefault();
+
         //добавление сообщения в html
-        const message = document.createElement("div")
-        message.className = "mess"
+        const message = document.createElement("li")
+        const date = String(new Date())
+      if (this.$input.value != "") {
 
-        message.innerHTML = this.$input.value
-
-      //вставляет вверх списка
+        const mess = "<font size = 5>" + this.$input.value + "</font>" + "<br/>" + "<font size = 1>" +
+          date + "</font>>"
+        message.innerHTML = mess;
+        //вставляет вверх списка
         this.$messList.append(message)
 
         //добавление сообщения в list
-        this.messageList.push(this.$input.value)
-        MessageForm.addElemToLocalStorage("messList", this.messageList )
+        this.messageList.push(mess)
+        MessageForm.addElemToLocalStorage("messList", this.messageList)
+      }
         this.$input.clearInput()
 
         this.$messList.scrollTo(0, this.$messList.scrollHeight)
