@@ -1,21 +1,14 @@
-
+import Message from './Message'
 
 const template = document.createElement('template');
-// language=HTML
 template.innerHTML = `
     <style>
-        ol{
-            background: beige;
-        }
-        
-        li {
-            /*
+              
+        div {
+            
             width: 100%;
-             display: flex;
-            justify-content: flex-end;
-            */
+            justify-content: flex-end;                         
             background: bisque;
-            list-style-type: none; /* Убираем маркеры списка*/
             border: 6px solid white;
             border: 1px solid grey;
             margin:10px;
@@ -23,22 +16,17 @@ template.innerHTML = `
             padding: 5px;
             
            }
-    
-       
         
         #messList{
-            overflow-y: scroll;
-            height: 700px;
-            bottom: 0;
-           
-            text-align: right;
-            border-collapse: separate;
-            margin-bottom: 10px;
-            
-            
+         overflow-y: scroll;
+         height: 700px;
+         bottom: 0;
+         
+         text-align: right;
+         border-collapse: separate;
+         margin-bottom: 10px;           
         }
-        
-        
+       
         form-input {
             height: 6vh;
             display: flex;
@@ -51,8 +39,7 @@ template.innerHTML = `
         }
         
     </style>
-    <ol id="messList">
-    </ol>
+    <div id="mess-list-root"></div>
     <form>
         <form-input name="message-text" placeholder="Введите сообщение"></form-input>
     </form>
@@ -68,26 +55,21 @@ class MessageForm extends HTMLElement {
       this._shadowRoot.appendChild(template.content.cloneNode(true));
       this.$form = this._shadowRoot.querySelector('form');
       this.$input = this._shadowRoot.querySelector('form-input');
-      //поиск по id
-      this.$messList = this._shadowRoot.querySelector("#messList");
-
-      //получаю Лист сообщений с localStorage
-      this.messageList = MessageForm.getElementFromLocalStorage("messList");
-      if (this.messageList == null)
-        this.messageList  = []
-      //отображение списка messageList
-
-        for (i = 0; i < this.messageList.length; i++) {
-          const message = document.createElement("li")
-          message.innerHTML = this.messageList[i]
-          message.style.top = "100 px";
-          this.$messList.append(message)
-        }
-
+      this.$messListRoot = this._shadowRoot.querySelector("#mess-list-root");
+      console.log(this.$messListRoot);
+      this.messList = [];
+      this.messList = MessageForm.getElementFromLocalStorage("MESS_LIST_KEY");
+      if (this.messList == null){
+        this.messList = []
+      }else {
+        const root = this.$messListRoot;
+        this.messList.forEach(function (map) {
+          let message = new Message();
+          message.createMess("Kate", "chat_1", map.get("message"), "12.09.2019", root)
+        })
+      }
       //Прокручиваю сообщения вниз
-      this.$messList.scrollTo(0, this.$messList.scrollHeight)
-
-
+      this.$messListRoot.scrollTo(0, this.$messListRoot.scrollHeight);
       //Добавление listener
       this.$form.addEventListener('submit', this._onSubmit.bind(this));
       this.$form.addEventListener('keypress', this._onKeyPress.bind(this));
@@ -95,43 +77,51 @@ class MessageForm extends HTMLElement {
     }
 
     _onSubmit (event) {
-        //todo что это?
         event.preventDefault();
-
-        //добавление сообщения в html
-        const message = document.createElement("li")
-        const date = String(new Date())
-      if (this.$input.value != "") {
-
-        const mess = "<font size = 5>" + this.$input.value + "</font>" + "<br/>" + "<font size = 1>" +
-          date + "</font>>"
-        message.innerHTML = mess;
-        //вставляет вверх списка
-        this.$messList.append(message)
-
-        //добавление сообщения в list
-        this.messageList.push(mess)
-        MessageForm.addElemToLocalStorage("messList", this.messageList)
+      if (this.$input.value !== "") {
+        let message = new Message();
+        message.createMess("Kate", "chat_1", this.$input.value, MessageForm.getDate(), this.$messListRoot);
+        this.messList.push(new Map([["senderId","Kate"], ["message", this.$input.value]]));
+        MessageForm.addElemToLocalStorage("MESS_LIST_KEY",this.messList)
       }
-        this.$input.clearInput()
-
-        this.$messList.scrollTo(0, this.$messList.scrollHeight)
+        this.$input.clearInput();
+        this.$messListRoot.scrollTo(0, this.$messListRoot.scrollHeight)
 
     }
 
 
     static addElemToLocalStorage (key , val){
-       const jsonObj = JSON.stringify(val)
-      localStorage.setItem(key, jsonObj)
+      let messList = [];
+      val.forEach(function (map) {
+        messList.push(JSON.stringify(Array.from(map.entries())))});
+      console.log(JSON.stringify(messList));
+      localStorage.setItem(key, JSON.stringify(messList))
+
     }
 
     static getElementFromLocalStorage(key){
-      console.log(JSON.parse(localStorage.getItem(key)))
-      return JSON.parse(localStorage.getItem(key))
+      const local = localStorage.getItem(key);
+      if (local == null){
+        return []
+      }
+      let list = JSON.parse(local);
+      let result = [];
+      list.forEach(function(map){
+        result.push(new Map(JSON.parse(map)))
+      });
+      return result
+    }
+
+    static getDate(){
+      let date = new Date().toString();
+      date = date.split(' ');
+      date = date[2] + '-' + date[1] + ' ' + date[4];
+
+      return date
     }
 
     _onKeyPress (event) {
-        if (event.keyCode == 13) {
+        if (event.keyCode === 13) {
             this.$form.dispatchEvent(new Event('submit'));
         }
     }
