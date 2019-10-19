@@ -22,4 +22,5 @@ deploy:
   on:
     branch:
       - master
-      - /v\d+\.\d+[a-z]/
+      - devel
+      - HM_2
