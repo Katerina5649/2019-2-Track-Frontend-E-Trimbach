@@ -76,7 +76,7 @@ class MessageForm extends HTMLElement {
     if (this.$input.value !== '') {
       const message = new Message();
       message.createMess('Kate', 'chat_1', this.$input.value, MessageForm.getDate(), this.$messListRoot);
-      this.messList.push(new Map([['senderId', 'Kate'], ['message', this.$input.value]]));
+      this.messList.push(new Map([['sender_Id', 'Kate'], ['message', this.$input.value]]));
       MessageForm.addElemToLocalStorage('MESS_LIST_KEY', this.messList);
     }
     this.$input.clearInput();
