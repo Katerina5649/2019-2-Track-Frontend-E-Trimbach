@@ -24,13 +24,13 @@ template.innerHTML = `
 export default class Message extends HTMLElement {
   constructor() {
     super();
-    this._shadowRoot = this.attachShadow({mode: 'open'});
+    this._shadowRoot = this.attachShadow({ mode: 'open' });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
     this.$message = this.shadowRoot.querySelector('.my-message');
     this.$date = this.shadowRoot.querySelector('.date');
     this.$messClass = this.shadowRoot.querySelector('.mess_class');
-    this.chatId = ""
-    this.senderId = ""
+    this.chatId = '';
+    this.senderId = '';
   }
 
   createMess(senderId, chatId, mess, date, root) {
@@ -38,8 +38,7 @@ export default class Message extends HTMLElement {
     this.senderId = senderId;
     this.$message.innerText = mess;
     this.$date.innerText = date;
-    root.appendChild(this.$messClass)
+    root.appendChild(this.$messClass);
   }
-
 }
 customElements.define('chat-message', Message);

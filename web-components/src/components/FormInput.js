@@ -20,7 +20,7 @@ template.innerHTML = `
 class FormInput extends HTMLElement {
   constructor() {
     super();
-    this._shadowRoot = this.attachShadow({mode: 'open'});
+    this._shadowRoot = this.attachShadow({ mode: 'open' });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
 
     this.$input = this.shadowRoot.querySelector('input');
@@ -38,9 +38,9 @@ class FormInput extends HTMLElement {
     return this.$input.value;
   }
 
-  /*Очищает input */
+  /* Очищает input */
   clearInput() {
-    this.$input.value = ""
+    this.$input.value = '';
   }
 }
 

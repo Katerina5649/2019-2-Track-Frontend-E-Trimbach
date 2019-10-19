@@ -5,7 +5,7 @@
   "homepage": "https://Katerina5649.github.io/2019-2-Track-Frontend-E-Trimbach",
   "version": "0.1.0",
   "scripts": {
-    "test": "npm run lint",
+    "test": "eslint . --fix",
     "start": "webpack-dev-server --mode=development --hot",
     "build": "webpack --mode=development",
     "lint": "npm run lint:js",
