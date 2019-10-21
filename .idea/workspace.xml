@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="06bb3345-59b3-41d9-9674-09e4e660657d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/correctSentence.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/correctSentence.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-components/src/components/MessageForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-components/src/components/MessageForm.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1RvojUqwDfX9ow3XC03rqrI4L1f" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-components" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web-components" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.test">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web-components/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint:js" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web-components/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint:js" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web-components/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web-components/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.lint:js" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06bb3345-59b3-41d9-9674-09e4e660657d" name="Default Changelist" comment="" />
+      <created>1570557065779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570557065779</updated>
+      <workItem from="1570557066942" duration="650000" />
+      <workItem from="1570711840704" duration="1150000" />
+      <workItem from="1570727057185" duration="61306000" />
+      <workItem from="1571263128809" duration="8450000" />
+      <workItem from="1571334301006" duration="3987000" />
+      <workItem from="1571433616525" duration="13099000" />
+      <workItem from="1571652528844" duration="2515000" />
+    </task>
+    <task id="LOCAL-00001" summary="Nothing important">
+      <created>1570557113276</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570557113276</updated>
+    </task>
+    <task id="LOCAL-00002" summary="download webcomponent">
+      <created>1570796464737</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570796464737</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Tried to do list. Have problems">
+      <created>1570959109552</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570959109552</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Just for save changes">
+      <created>1571080772366</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571080772367</updated>
+    </task>
+    <task id="LOCAL-00005" summary="There are a lot for to do, but it is first step.">
+      <created>1571083454681</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571083454681</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Replaced &lt;ol&gt; with a &lt;div&gt; , added class Message.js , change structure of mess on Map , added linter">
+      <created>1571482909862</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571482909863</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added .eslintrc.js">
+      <created>1571491843346</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571491843347</updated>
+    </task>
+    <task id="LOCAL-00008" summary="changed package.json">
+      <created>1571507390472</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571507390472</updated>
+    </task>
+    <task id="LOCAL-00009" summary="-">
+      <created>1571507845082</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1571507845082</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixed travis">
+      <created>1571508495743</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571508495743</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixed travis">
+      <created>1571512856311</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571512856314</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixed travis">
+      <created>1571514207078</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1571514207079</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixed travis">
+      <created>1571514537266</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1571514537266</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed travis">
+      <created>1571514625252</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1571514625252</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fixed travis">
+      <created>1571675536090</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571675536090</updated>
+    </task>
+    <task id="LOCAL-00016" summary="updated gitignore">
+      <created>1571677733623</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571677733623</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Nothing important" />
+    <MESSAGE value="download webcomponent" />
+    <MESSAGE value="Tried to do list. Have problems" />
+    <MESSAGE value="Just for save changes" />
+    <MESSAGE value="There are a lot for to do, but it is first step." />
+    <MESSAGE value="Replaced &lt;ol&gt; with a &lt;div&gt; , added class Message.js , change structure of mess on Map , added linter" />
+    <MESSAGE value="added .eslintrc.js" />
+    <MESSAGE value="changed package.json" />
+    <MESSAGE value="-" />
+    <MESSAGE value="fixed travis" />
+    <MESSAGE value="updated gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated gitignore" />
+  </component>
+</project>
