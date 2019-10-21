@@ -8,7 +8,7 @@ template.innerHTML = `
             
             width: 100%;
             justify-content: flex-end;                         
-            background: bisque;
+            background: #bbbbbb;
             border: 1px solid grey;
             margin:10px;
             border-radius: 0.9em;
@@ -40,7 +40,7 @@ template.innerHTML = `
     </style>
     <div id="mess-list-root"></div>
     <form>
-        <form-input name="message-text" placeholder="Введите сообщение"></form-input>
+        <form-input name="message-text" placeholder="Введите  сообщение"></form-input>
     </form>
    
 `;
