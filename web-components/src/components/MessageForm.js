@@ -3,44 +3,56 @@ import Message from './Message';
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
-              
-        div {
-            
-            width: 100%;
-            justify-content: flex-end;                         
-            background: #bbbbbb;
-            border: 1px solid grey;
-            margin:10px;
-            border-radius: 0.9em;
-            padding: 5px;
-            
-           }
+           
+          form{
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+          }
+
         
-        #messList{
+        .flex-cont {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            max-height: 100%;
+        }
+        
+        #mess-list-root{
          overflow-y: scroll;
-         height: 700px;
          bottom: 0;
-         
          text-align: right;
          border-collapse: separate;
-         margin-bottom: 10px;           
+         margin-bottom: 10px;   
+         
+         
+             display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            flex: 1;  
+               
         }
        
         form-input {
-            height: 6vh;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
+            width: 100%;
+            align-self: flex-end;
+            min-height: 50px;
+         }
         
         input[type=submit] {
             visibility: collapse;
         }
         
     </style>
-    <div id="mess-list-root"></div>
+    
     <form>
-        <form-input name="message-text" placeholder="Введите  сообщение"></form-input>
+        <div class = "flex-cont">
+            <div id="mess-list-root"></div>
+            <form-input name="message-text" placeholder="Введите  сообщение"></form-input>
+        </div>
     </form>
    
 `;
