@@ -24,14 +24,14 @@ template.innerHTML = `
          overflow-y: scroll;
          bottom: 0;
          text-align: right;
-         border-collapse: separate;
-         margin-bottom: 10px;   
-         
-         
-             display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-            flex: 1;  
+        
+         margin-bottom: 10px; 
+         min-height: 670px;  
+         height: 70%;         
+         display: flex;
+         flex-direction: column;
+         overflow-y: auto;
+         flex: 1;  
                
         }
        
@@ -40,16 +40,28 @@ template.innerHTML = `
             width: 100%;
             align-self: flex-end;
             min-height: 50px;
+            position: relative;
+           
          }
         
         input[type=submit] {
             visibility: collapse;
         }
         
+        .head{
+        text-align: center;
+        background: #0074D9;
+        padding: 20px;
+        margin: unset;
+        color: #bbbbbb;
+       
+        }
+        
     </style>
     
     <form>
         <div class = "flex-cont">
+            <h1 class="head">Chat Screen</h1>
             <div id="mess-list-root"></div>
             <form-input name="message-text" placeholder="Введите  сообщение"></form-input>
         </div>

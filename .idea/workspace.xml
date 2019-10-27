@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="06bb3345-59b3-41d9-9674-09e4e660657d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/correctSentence.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/correctSentence.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-components/src/components/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-components/src/components/Message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-components/src/components/MessageForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-components/src/components/MessageForm.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -133,7 +133,7 @@
       <workItem from="1571334301006" duration="3987000" />
       <workItem from="1571433616525" duration="13099000" />
       <workItem from="1571652528844" duration="3357000" />
-      <workItem from="1572106251768" duration="2261000" />
+      <workItem from="1572106251768" duration="5561000" />
     </task>
     <task id="LOCAL-00001" summary="Nothing important">
       <created>1570557113276</created>
@@ -247,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571677733623</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fixed form-input, added autoscroll">
+      <created>1572115000514</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1572115000514</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +285,7 @@
     <MESSAGE value="-" />
     <MESSAGE value="fixed travis" />
     <MESSAGE value="updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated gitignore" />
+    <MESSAGE value="fixed form-input, added autoscroll" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed form-input, added autoscroll" />
   </component>
 </project>

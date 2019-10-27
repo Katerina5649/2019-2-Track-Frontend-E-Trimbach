@@ -1,13 +1,13 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
-        input {
-            border: 0;
-            outline: none;
-            width: calc(100% - 2px);
-            
-           
+        .mess_class{
+        border-radius: 20px;
+        border: 0.5rem solid black;
+        width: fit-content;
+        background: black;
         }
+        
 
         :host {
             display: inline-block;
@@ -16,8 +16,7 @@ template.innerHTML = `
     </style>
     <div class = "mess_class">
         <div class = "my-message"></div>
-        <div class = "date"></div>
-        
+        <div class = "date"></div>       
     </div>
 `;
 
