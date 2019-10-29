@@ -1,8 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 import Message from './Message';
 
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
+    
+       
            
           form{
            position: fixed;
@@ -17,14 +20,15 @@ template.innerHTML = `
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            max-height: 100%;
+            height: 100%;
         }
         
         #mess-list-root{
+         align-items: flex-end;
          overflow-y: scroll;
          bottom: 0;
          text-align: right;
-        
+         margin-top: 5px;
          margin-bottom: 10px; 
          min-height: 670px;  
          height: 70%;         
@@ -82,10 +86,12 @@ class MessageForm extends HTMLElement {
     if (this.messList == null) {
       this.messList = [];
     } else {
-      const root = this.$messListRoot;
       this.messList.forEach((map) => {
-        const message = new Message();
-        message.createMess('Kate', 'chat_1', map.get('message'), '12.09.2019', root);
+        const message = document.createElement('chat-message');
+        message.$message.innerText = map.get('message');
+        message.$date.innerText = map.get('date');
+        this.$messListRoot.append(message);
+        // message.createMess('Kate', 'chat_1', map.get('message'), '12.09.2019', root);
       });
     }
     // Прокручиваю сообщения вниз
@@ -98,9 +104,11 @@ class MessageForm extends HTMLElement {
   _onSubmit(event) {
     event.preventDefault();
     if (this.$input.value !== '') {
-      const message = new Message();
-      message.createMess('Kate', 'chat_1', this.$input.value, MessageForm.getDate(), this.$messListRoot);
-      this.messList.push(new Map([['sender_Id', 'Kate'], ['message', this.$input.value]]));
+      // todo
+      const message = document.createElement('chat-message');
+      message.$message.innerText = this.$input.value;
+      message.$date.innerText = MessageForm.getDate();
+      this.$messListRoot.append(message);
       MessageForm.addElemToLocalStorage('MESS_LIST_KEY', this.messList);
     }
     this.$input.clearInput();

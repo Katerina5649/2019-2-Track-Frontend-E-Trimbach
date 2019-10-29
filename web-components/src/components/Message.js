@@ -1,23 +1,49 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
+        div{
+            text-align: right;
+         }
         .mess_class{
-        border-radius: 20px;
-        border: 0.5rem solid black;
-        width: fit-content;
-        background: black;
+            display: flex;
+            color: white;
+            word-break: break-word;
+            white-space: pre-wrap;
+            background: darkorange;
+            border: 0.5rem solid;
+            border-radius: 20px;
+            border-color: darkorange;
+            width: fit-content;
+            max-width: 600px;
+            margin-left: 20px;
+            min-width : 100px;
+            min-height: 30px;        
         }
         
+        .date{
+        font-size : smaller;
+        
+        }
+        
+        .space{
+        min-height: 5px;
+        }
+        
+        .my-message{
+            flex: auto;
+        }
 
         :host {
             display: inline-block;
-            border: 1px solid rgba(25, 25, 25, 0.32);
+           
         }
     </style>
     <div class = "mess_class">
-        <div class = "my-message"></div>
-        <div class = "date"></div>       
+        <div class = "my-message"></div>         
+        <div class = "space"></div>   
     </div>
+    <div class = "date"></div> 
+    <div class = "space"></div>
 `;
 
 export default class Message extends HTMLElement {
