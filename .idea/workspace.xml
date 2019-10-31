@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="06bb3345-59b3-41d9-9674-09e4e660657d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +133,7 @@
       <workItem from="1571652528844" duration="3357000" />
       <workItem from="1572106251768" duration="11020000" />
       <workItem from="1572351167356" duration="1796000" />
-      <workItem from="1572428333775" duration="469000" />
+      <workItem from="1572428333775" duration="686000" />
     </task>
     <task id="LOCAL-00001" summary="Nothing important">
       <created>1570557113276</created>
@@ -269,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572352871984</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added .idea to .gitignore">
+      <created>1572530354542</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1572530354542</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +308,7 @@
     <MESSAGE value="fixed form-input, added autoscroll" />
     <MESSAGE value="-" />
     <MESSAGE value="added css to chat, added .idea in gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added css to chat, added .idea in gitignore" />
+    <MESSAGE value="added .idea to .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="added .idea to .gitignore" />
   </component>
 </project>
