@@ -3,10 +3,7 @@ import Message from './Message';
 
 const template = document.createElement('template');
 template.innerHTML = `
-    <style>
-    
-       
-           
+    <style>         
           form{
            position: fixed;
            top: 0;
@@ -52,7 +49,7 @@ template.innerHTML = `
             visibility: collapse;
         }
         
-        .head{
+        .chat_name{
         text-align: center;
         background: #0074D9;
         padding: 20px;
@@ -65,7 +62,10 @@ template.innerHTML = `
     
     <form>
         <div class = "flex-cont">
-            <h1 class="head">Chat Screen</h1>
+        <div class = "head">
+            <button class = "back"></button>
+            <h1 class="chat_name">Chat Screen</h1>
+        </div>    
             <div id="mess-list-root"></div>
             <form-input name="message-text" placeholder="Введите  сообщение"></form-input>
         </div>
@@ -115,7 +115,7 @@ class MessageForm extends HTMLElement {
     this.$messListRoot.scrollTo(0, this.$messListRoot.scrollHeight);
   }
 
-
+//для map
   static addElemToLocalStorage(key, val) {
     const messList = [];
     val.forEach((map) => {
