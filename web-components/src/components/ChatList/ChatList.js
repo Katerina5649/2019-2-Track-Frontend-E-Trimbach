@@ -31,12 +31,19 @@ template.innerHTML = `
             height: 8vh;
             background-color: #0084ff;
             transition: all 0.3s;
+            
+          }
+          
+          span{
+             font-size: 350%;
+             color: black;      
+             font-weight: bold;
           }
 </style>
 <form>
     <h1>Chat List</h1>
     <div class = "chat-root" id = 'chat-root'></div>
-    <button></button>
+    <button><span>+</span></button>
 </form>
 `;
 
