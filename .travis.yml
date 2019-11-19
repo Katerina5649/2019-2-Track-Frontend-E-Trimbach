@@ -24,3 +24,4 @@ deploy:
       - master
       - devel
       - HM_2
+      - HW_3

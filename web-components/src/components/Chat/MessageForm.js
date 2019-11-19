@@ -3,10 +3,7 @@ import Message from './Message';
 
 const template = document.createElement('template');
 template.innerHTML = `
-    <style>
-    
-       
-           
+    <style>         
           form{
            position: fixed;
            top: 0;
@@ -52,7 +49,7 @@ template.innerHTML = `
             visibility: collapse;
         }
         
-        .head{
+        .chat_name{
         text-align: center;
         background: #0074D9;
         padding: 20px;
@@ -65,7 +62,9 @@ template.innerHTML = `
     
     <form>
         <div class = "flex-cont">
-            <h1 class="head">Chat Screen</h1>
+        <div class = "head">
+            <h1 class="chat_name">Chat Screen</h1>
+        </div>    
             <div id="mess-list-root"></div>
             <form-input name="message-text" placeholder="Введите  сообщение"></form-input>
         </div>
@@ -81,21 +80,8 @@ class MessageForm extends HTMLElement {
     this.$form = this._shadowRoot.querySelector('form');
     this.$input = this._shadowRoot.querySelector('form-input');
     this.$messListRoot = this._shadowRoot.querySelector('#mess-list-root');
-    this.messList = [];
-    this.messList = MessageForm.getElementFromLocalStorage('MESS_LIST_KEY');
-    if (this.messList == null) {
-      this.messList = [];
-    } else {
-      this.messList.forEach((map) => {
-        const message = document.createElement('chat-message');
-        message.$message.innerText = map.get('message');
-        message.$date.innerText = map.get('date');
-        this.$messListRoot.append(message);
-        // message.createMess('Kate', 'chat_1', map.get('message'), '12.09.2019', root);
-      });
-    }
-    // Прокручиваю сообщения вниз
-    this.$messListRoot.scrollTo(0, this.$messListRoot.scrollHeight);
+    this.$chatId = null;
+    this.reloadMessList();
     // Добавление listener
     this.$form.addEventListener('submit', this._onSubmit.bind(this));
     this.$form.addEventListener('keypress', this._onKeyPress.bind(this));
@@ -104,18 +90,22 @@ class MessageForm extends HTMLElement {
   _onSubmit(event) {
     event.preventDefault();
     if (this.$input.value !== '') {
-      // todo
       const message = document.createElement('chat-message');
       message.$message.innerText = this.$input.value;
-      message.$date.innerText = MessageForm.getDate();
+      const date = MessageForm.getDate();
+      message.$date.innerText = date;
       this.$messListRoot.append(message);
-      MessageForm.addElemToLocalStorage('MESS_LIST_KEY', this.messList);
+      const map = new Map();
+      map.set('date', date);
+      map.set('message', this.$input.value);
+      this.messList.push(map);
+      MessageForm.addElemToLocalStorage(`MESS_LIST_KEY_${this.$chatId}`, this.messList);
     }
     this.$input.clearInput();
     this.$messListRoot.scrollTo(0, this.$messListRoot.scrollHeight);
   }
 
-
+  // для map
   static addElemToLocalStorage(key, val) {
     const messList = [];
     val.forEach((map) => {
@@ -143,6 +133,23 @@ class MessageForm extends HTMLElement {
     date = `${date[2]}-${date[1]} ${date[4]}`;
 
     return date;
+  }
+
+  reloadMessList() {
+    this.messList = MessageForm.getElementFromLocalStorage(`MESS_LIST_KEY_${this.$chatId}`);
+    if (this.messList == null) {
+      this.messList = [];
+    } else {
+      this.messList.forEach((map) => {
+        const message = document.createElement('chat-message');
+        message.$message.innerText = map.get('message');
+        message.$date.innerText = map.get('date');
+        this.$messListRoot.append(message);
+        // message.createMess('Kate', 'chat_1', map.get('message'), '12.09.2019', root);
+      });
+    }
+    // Прокручиваю сообщения вниз
+    this.$messListRoot.scrollTo(0, this.$messListRoot.scrollHeight);
   }
 
   _onKeyPress(event) {
