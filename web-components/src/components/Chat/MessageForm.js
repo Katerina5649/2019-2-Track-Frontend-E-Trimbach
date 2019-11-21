@@ -54,9 +54,20 @@ template.innerHTML = `
         background: #0074D9;
         padding: 20px;
         margin: unset;
-        color: #bbbbbb;
-       
+        color: #bbbbbb;      
         }
+        
+        @keyframes appear {
+          0% {
+            opacity(0);
+            transform: scale(0.1, 0.1);
+          }
+          100% {
+            opacity(1);
+            transform: scale(1, 1);
+          }
+        }
+        
         
     </style>
     
@@ -91,6 +102,7 @@ class MessageForm extends HTMLElement {
     event.preventDefault();
     if (this.$input.value !== '') {
       const message = document.createElement('chat-message');
+      message.style.animation = 'appear 0.3s';
       message.$message.innerText = this.$input.value;
       const date = MessageForm.getDate();
       message.$date.innerText = date;
@@ -142,6 +154,7 @@ class MessageForm extends HTMLElement {
     } else {
       this.messList.forEach((map) => {
         const message = document.createElement('chat-message');
+        message.style.animation = 'appear 0.3s';
         message.$message.innerText = map.get('message');
         message.$date.innerText = map.get('date');
         this.$messListRoot.append(message);

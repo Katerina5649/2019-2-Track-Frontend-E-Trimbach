@@ -31,6 +31,8 @@ template.innerHTML = `
             height: 8vh;
             background-color: #0084ff;
             transition: all 0.3s;
+            box-shadow: 0 0 0 blue;
+            animation: pulse 2s infinite;
             
           }
           
@@ -39,11 +41,33 @@ template.innerHTML = `
              color: black;      
              font-weight: bold;
           }
+                    
+             .addChatButton:hover {
+             animation: none;
+          }
+           
+           
+          @keyframes pulse {
+          0% {
+               -moz-box-shadow: 0 0 0 0 cornflowerblue;
+               box-shadow: 0 0 0 0 deepskyblue;
+          }
+          70% {
+               -moz-box-shadow: 0 0 0 10px cornflowerblue;
+               box-shadow: 0 0 0 10px deepskyblue;
+          }
+          100% {
+                -moz-box-shadow: 0 0 0 0 cornflowerblue;
+                box-shadow: 0 0 0 0 deepskyblue;
+          }
+          }
+    }
+         
 </style>
 <form>
     <h1>Chat List</h1>
     <div class = "chat-root" id = 'chat-root'></div>
-    <button><span>+</span></button>
+    <button class = "addChatButton"><span>+</span></button>
 </form>
 `;
 
@@ -110,4 +134,5 @@ class ChatList extends HTMLElement {
     this.$chatListRoot.appendChild(elem);
   }
 }
+
 customElements.define('chat-list', ChatList);

@@ -11,6 +11,13 @@ template.innerHTML = `
              border-color: darkorange;
             
     }
+    
+    :hover{
+            background: #fff4c2;
+    }
+    
+}
+    
     </style>
     <div class = "chat-class"> 
         <div class = "chat-name"></div>          
@@ -36,6 +43,9 @@ export default class Chat extends HTMLElement {
       node.parentNode.removeChild(node);
     }
     const chatForm = document.createElement('message-form');
+    chatForm.className = 'mess-form';
+    chatForm.animationDuration = '3s';
+    chatForm.animationName = 'slidein';
     chatForm.$chatId = this.chatId;
     chatForm.reloadMessList();
     parent.appendChild(chatForm);

@@ -55,6 +55,9 @@ form-input{
 min-height: 10px;
 
 }
+.close:hover{
+color: black;
+}
 
 </style>
 
