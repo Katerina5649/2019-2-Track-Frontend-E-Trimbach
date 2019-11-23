@@ -13,6 +13,7 @@ template.innerHTML = `
             display: inline-block;
             border: 1px solid rgba(25, 25, 25, 0.32);
         }
+        
     </style>
     <input type="text">
 `;
